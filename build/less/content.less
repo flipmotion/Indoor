@@ -936,15 +936,20 @@
 	/*END card-case*/ 
 	/*contacts*/ 
 	.map {
+		
 		h2 {
 			.hn-rom;
 			font-size: 23px;
 			margin: 0 0 25px;
 		}
 		.info {
+			background: #fff;
+			position: absolute;
 			margin: 0 50px;
 			padding: 50px 30px 40px;
 			box-shadow: -1px 1px 5px 4px rgba(0,0,0,.3);
+			top:40px;
+			z-index: 10;
 			.info-row {
 				display: flex;
 				align-items: center;
@@ -965,9 +970,12 @@
 				}
 			}
 		}
+		
 	}
 	/*END contacts*/ 
-	
+	#map {
+		height: 460px;
+	}
 }
 /*modal*/
 .modal-dialog {

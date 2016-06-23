@@ -57,6 +57,26 @@ $(document).ready(function () {
     }
   });
 });
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 17,
+    disableDefaultUI: true,
+    scrollwheel: false,
+    center: { lat: 55.7069159, lng: 37.501391900000044 }
+  });
+
+  var image = 'assets/img/g-pin.png';
+  var pin = new google.maps.Marker({
+    position: { lat: 55.7069159, lng: 37.501391900000044 },
+    map: map,
+    icon: {
+      url: image,
+      size: new google.maps.Size(224, 80),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(0, 0)
+    }
+  });
+}
 function send() {
   var form = $('[data-form="send"]');
   form.ajaxForm(function () {
