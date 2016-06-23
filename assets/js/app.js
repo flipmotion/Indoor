@@ -1,18 +1,32 @@
-$(document).ready(function () {
+"use strict";
 
-  function slider(sliderName, count) {
+$(document).ready(function () {
+  var opt = {
+    0: {
+      items: 2
+    },
+    480: {
+      items: 2
+    },
+    768: {
+      items: 3
+    },
+    992: {
+      items: 5
+    }
+  };
+  function slider(sliderName, count, resp) {
     $(sliderName).owlCarousel({
       items: count,
       loop: true,
       nav: true,
       pagination: false,
-      navText: ["<i class='my-arrow-left'></i>", "<i class='my-arrow-right'></i>"]
+      navText: ["<i class='my-arrow-left'></i>", "<i class='my-arrow-right'></i>"],
+      responsive: resp
     });
   };
-  slider('[data-slider="1"]', 1);
-  slider('[data-slider="9"]', 9);
-  slider('[data-slider="2"]', 2);
-  slider('[data-slider="3"]', 3);
+  slider('[data-slider="1"]', 1, false);
+  slider('[data-slider="5"]', 5, opt);
 
   $('[data-slider="main"]').owlCarousel({
     items: 1,
@@ -22,7 +36,13 @@ $(document).ready(function () {
     // autoplay: true,
     // autoplayTimeout: 3000,
     dotsContainer: '#dots',
+    navContainer: '#navs',
     navText: ["<i class='my-arrow-left'></i>", "<i class='my-arrow-right'></i>"]
+  });
+
+  $('[data-select="new"]').select2({
+    theme: "bootstrap",
+    minimumResultsForSearch: Infinity
   });
 
   send();
