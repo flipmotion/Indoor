@@ -62,28 +62,15 @@
 			send();
 		}
 	});
+ 	$('.btn-toggle').click(function() {
+ 		$(this).find('.btn').toggleClass('active');  
 
- });
- function initMap() {
- 	var map = new google.maps.Map(document.getElementById('map'), {
- 		zoom: 17,
- 		disableDefaultUI: true,
- 		scrollwheel: false,
- 		center: {lat: 55.7069159, lng: 37.501391900000044}
- 	});
-
- 	var image = 'assets/img/g-pin.png';
- 	var pin = new google.maps.Marker({
- 		position: {lat: 55.7069159, lng: 37.501391900000044},
- 		map: map,
- 		icon: {
- 			url:image,
- 			size: new google.maps.Size(224, 80),
- 			origin: new google.maps.Point(0, 0),
- 			anchor: new google.maps.Point(0, 0)
+ 		if ($(this).find('.btn-primary').size()>0) {
+ 			$(this).find('.btn').toggleClass('btn-primary');
  		}
  	});
- }
+ });
+
  function send(){
  	var form = $('[data-form="send"]');
  	form.ajaxForm(function() {
@@ -98,5 +85,59 @@
  		$(form).resetForm();
  	});
  }
+
+
+ 
+
+ var LocationData = [
+ [49.2812668, -123.1035942, "<div class='g-maps-baloon'><div><img src='assets/img/map-item-1.png'></div><div><p>БЦ «Башня Федерации» 1</p><p>Пресненская наб., 12, Москва 1</p></div></div>" ], 
+ [49.2814064, -123.1025187, "<div class='g-maps-baloon'><div><img src='assets/img/map-item-1.png'></div><div><p>БЦ «Башня Федерации» 2</p><p>Пресненская наб., 12, Москва 2</p></div></div>" ], 
+ [49.2812336, -123.1020622, "<div class='g-maps-baloon'><div><img src='assets/img/map-item-1.png'></div><div><p>БЦ «Башня Федерации» 3</p><p>Пресненская наб., 12, Москва 3</p></div></div>" ], 
+ [49.2813564, -123.1012253, "<div class='g-maps-baloon'><div><img src='assets/img/map-item-1.png'></div><div><p>БЦ «Башня Федерации» 4</p><p>Пресненская наб., 12, Москва 4</p></div></div>" ], 
+ [49.2811625, -123.0985032, "<div class='g-maps-baloon'><div><img src='assets/img/map-item-1.png'></div><div><p>БЦ «Башня Федерации» 5</p><p>Пресненская наб., 12, Москва 5</p></div></div>" ]
+ ];
+
+ function initialize()
+ {
+ 	var map = new google.maps.Map(document.getElementById('mapSearch'));
+ 	var bounds = new google.maps.LatLngBounds();
+ 	var infowindow = new google.maps.InfoWindow();
+ 	var image = 'assets/img/g-pin-small.png';
+ 	for (var i in LocationData)
+ 	{
+ 		var p = LocationData[i];
+ 		var latlng = new google.maps.LatLng(p[0], p[1]);
+ 		bounds.extend(latlng);
+
+ 		var marker = new google.maps.Marker({
+ 			position: latlng,
+ 			map: map,
+ 			title: p[2],
+ 			icon: {
+ 				url:image,
+ 				size: new google.maps.Size(23, 31),
+ 				origin: new google.maps.Point(0, 0),
+ 				anchor: new google.maps.Point(0, 0)
+ 			}
+ 		});
+
+ 		google.maps.event.addListener(marker, 'click', function() {
+ 			infowindow.setContent(this.title);
+ 			infowindow.open(map, this);
+ 			$('.g-maps-baloon').parent().css('overflow','visible');
+ 			$('.g-maps-baloon').parent().parent().css('overflow','visible');
+ 			$('.g-maps-baloon').parent().parent().parent().css('overflow','visible');
+ 		});
+ 	}
+
+ 	map.fitBounds(bounds);
+ }
+
+ google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+ initialize();
+
 
 

@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCsO-dTrAp_gO35mXkM7ySqzI0oNxU68g&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCsO-dTrAp_gO35mXkM7ySqzI0oNxU68g&callback=initMap" async defer></script> -->
 	<!-- <script src="assets/js/jquery.min.js" type="text/javascript"></script> -->
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,7 +16,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body data-spy="scroll" data-target="#my-nav">
+	<body>
 		<!-- sticky -->
 		<div class="sticky-page">
 			<section class="header">
@@ -32,7 +33,7 @@
 								<p class="clock text-center">Круглосуточно 24/7</p>
 							</div>
 							<div class="col-xs-12 col-sm-3 col-md-2">
-								<button type="button" class="btn btn-danger">Заказать звонок</button>
+								<button type="button" class="btn btn-danger" data-target="#call" data-toggle="modal">Заказать звонок</button>
 							</div>
 
 						</div>
@@ -106,37 +107,60 @@
 					</div>
 				</div>
 				<section class="map">
-						<div class="container">
-							<div class="row">
-								<div class="col-xs-12 col-sm-12 col-md-12">
-									<h2>Офис компании «Top Indoor Media» в Москве</h2>
-								</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<h2>Офис компании «Top Indoor Media» в Москве</h2>
 							</div>
-							<div class="row">
-								<div class="col-xs-12 col-sm-7 col-md-5">
-									<div class="info">
-										<div class="info-row">
-											<div><img src="assets/img/info-1.png" alt=""></div>
-											<div><p>г. Москва, ул. Мосфильмовская, 51 стр. 2</p></div>
-										</div>
-										<div class="info-row">
-											<div><img src="assets/img/info-2.png" alt=""></div>
-											<div><p class="phone">+ 7 (495) 980-20-10</p></div>
-										</div>
-										<div class="info-row">
-											<div><img src="assets/img/info-3.png" alt=""></div>
-											<div><p class="mail">info@topindoor.ru</p></div>
-										</div>
-										<button type="button" class="btn btn-danger design-7">Напишите нам</button>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-7 col-md-5">
+								<div class="info">
+									<div class="info-row">
+										<div><img src="assets/img/info-1.png" alt=""></div>
+										<div><p>г. Москва, ул. Мосфильмовская, 51 стр. 2</p></div>
 									</div>
+									<div class="info-row">
+										<div><img src="assets/img/info-2.png" alt=""></div>
+										<div><p class="phone">+ 7 (495) 980-20-10</p></div>
+									</div>
+									<div class="info-row">
+										<div><img src="assets/img/info-3.png" alt=""></div>
+										<div><p class="mail">info@topindoor.ru</p></div>
+									</div>
+									<button type="button" class="btn btn-danger design-7">Напишите нам</button>
 								</div>
 							</div>
 						</div>
-					</section>
+					</div>
+				</section>
 				<div id="map">
 					
 				</div>
-				
+				<!-- перепробовал многое что б работала карта в скриптах на обоих страницах но блять магия гугла не дает,поробую-->
+				<script type="text/javascript">
+					function initMap() {
+						var map = new google.maps.Map(document.getElementById('map'), {
+							zoom: 17,
+							disableDefaultUI: true,
+							scrollwheel: false,
+							center: {lat: 55.7069159, lng: 37.501391900000044}
+						});
+
+						var image = 'assets/img/g-pin.png';
+						var pin = new google.maps.Marker({
+							position: {lat: 55.7069159, lng: 37.501391900000044},
+							map: map,
+							icon: {
+								url:image,
+								size: new google.maps.Size(224, 80),
+								origin: new google.maps.Point(0, 0),
+								anchor: new google.maps.Point(0, 0)
+							}
+						});
+					}
+					initMap();
+				</script>
 			</section><!-- content END -->
 
 			<!-- sticky END -->
