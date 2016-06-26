@@ -45,6 +45,12 @@ $(document).ready(function () {
     minimumResultsForSearch: Infinity
   });
 
+  $('#call').on('show.bs.modal', function (event) {
+    var btn = $(event.relatedTarget),
+        text = btn.data('whatever'),
+        modalTitle = $(this).find('.modal-body h3');
+    modalTitle.text(text);
+  });
   send();
   var form = $('[data-form="send"]');
   $(form).validator().on('submit', function (e) {

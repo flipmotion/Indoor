@@ -14,7 +14,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body data-spy="scroll" data-target="#my-nav">
+	<body>
 		<!-- sticky -->
 		<div class="sticky-page">
 			<section class="header">
@@ -530,215 +530,77 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<!-- <h4 class="modal-title">Обратная связь</h4> -->
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<h4 class="text-center text-uppercase">Пожалуйста, заполните форму, и мы ответим вам в течение 15 минут</h4>
+						<div class="col-xs-12">
+							<h3>Напишите нам</h3>
 						</div>
 					</div>
 					<form class="form-send form-contacts" data-toggle="validator"  action="hendler.php" method="post" role="form" data-form="send">
 						<div class="row">
-							<div class="col-xs-6">
+							<div class="col-xs-12">
 								<div class="form-group">
-									<label for="name">Как вас зовут?</label>
-									<input type="text" data-mask="name" name="user" id="name" class="form-control my-input 	name" placeholder="" required/>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-xs-6">
-								<div class="form-group">
-									<label for="email">Ваш телефон*</label>
-									<input type="email" data-mask="email" name="email" id="email" class="form-control my-input 	email" placeholder="" required/>
-									<div class="help-block with-errors"></div>
+									<input type="text" data-mask="name" name="user" id="name" class="form-control my-input 	name" placeholder="Ваше имя" required/>
+
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="form-group">
-									<label for="comment">В чём ваш вопрос?</label>
-									<textarea name="comment" id="" cols="" class="form-control" rows="" placeholder=""></textarea>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12 text-center">
-								<button type="submit" class="btn btn-warning design-3 text-uppercase">отправить</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+									<input type="text" data-mask="name" name="user" id="name" class="form-control my-input 	name" placeholder="Телефон" required/>
 
-	<div class="modal fade" id="thx-call" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<!-- <h4 class="modal-title">Обратная связь</h4> -->
-				</div>
-				<div class="modal-body thx-call">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<h4 class="text-center text-uppercase">ваш вопрос успешно отправлен. спасибо за обращение к специалистам “магазина квартир”!</h4>
-							<h4 class="text-center text-uppercase">МЫ ПЕРЕЗВОНИМ ВАМ В ТЕЧЕНИЕ 15 МИНУТ.</h4>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 text-center">
-							<button type="button" class="btn btn-warning design-3 text-uppercase">Закрыть</button>
-						</div>
-					</div>
-				</div>
-				
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
-	<div class="modal fade" id="call-2" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<!-- <h4 class="modal-title">Обратная связь</h4> -->
-				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<h4 class="text-center text-uppercase">пожалуйста, поделитесь впечатлениями о сотрудничестве с нами</h4>
-						</div>
-					</div>
-					<form class="form-send form-contacts" data-toggle="validator"  action="hendler.php" method="post" role="form" data-form="send">
-						<div class="row">
-							<div class="col-xs-6">
-								<div class="form-group">
-									<label for="name">Как вас зовут?</label>
-									<input type="text" data-mask="name" name="user" id="name" class="form-control my-input 	name" placeholder="" required/>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-xs-6">
-								<div class="form-group">
-									<label for="email">Ваш телефон*</label>
-									<input type="email" data-mask="email" name="email" id="email" class="form-control my-input 	email" placeholder="" required/>
-									<div class="help-block with-errors"></div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="form-group">
-									<label for="comment">Ваш отзыв*</label>
-									<textarea name="comment" id="" cols="" class="form-control" rows="" placeholder=""></textarea>
-									<div class="help-block with-errors"></div>
+									<input type="email" data-mask="email" name="email" id="email" class="form-control my-input 	email" placeholder="E-mail" required/>
+
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<label for="comment">Сообщение</label>
+									<textarea name="comment" id="" cols="" class="form-control" rows="" placeholder="Введите ваше сообщение...."></textarea>
+
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-12 text-center">
-								<button type="submit" class="btn btn-warning design-3 text-uppercase">отправить</button>
+								<button type="submit" class="btn btn-danger design-7">Отправить заявку</button>
+								<p class="err">Не заполнено поле Имя</p>
 							</div>
 						</div>
 					</form>
-				</div>
-				
+				</div>				
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
-	<div class="modal fade" id="thx-call-2" tabindex="-1" role="dialog">
+	<div class="modal fade thx" id="thx" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<!-- <h4 class="modal-title">Обратная связь</h4> -->
-				</div>
-				<div class="modal-body thx-call">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<h4 class="text-center text-uppercase">спасибо за отзыв!<br/> благодаря вам мы становимся лучше.</h4>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 text-center">
-							<button type="button" class="btn btn-warning design-3 text-uppercase">Закрыть</button>
-						</div>
-					</div>
-				</div>
-				
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
-	<div class="modal fade" id="call-3" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<!-- <h4 class="modal-title">Обратная связь</h4> -->
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<h4 class="text-center text-uppercase my-margin">пожалуйста, заполните форму, чтобы мы записали вас на просмотр</h4>
-						</div>
-					</div>
-					<form class="form-send form-contacts" data-toggle="validator"  action="hendler.php" method="post" role="form" data-form="send">
-						<div class="row">
-							<div class="col-xs-6">
-								<div class="form-group">
-									<label for="name">Как вас зовут?</label>
-									<input type="text" data-mask="name" name="user" id="name" class="form-control my-input 	name" placeholder="" required/>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-							<div class="col-xs-6">
-								<div class="form-group">
-									<label for="email">Ваш телефон*</label>
-									<input type="email" data-mask="email" name="email" id="email" class="form-control my-input 	email" placeholder="" required/>
-									<div class="help-block with-errors"></div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12 text-center">
-								<button type="submit" class="btn btn-warning design-3 text-uppercase">Записаться</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
-	<div class="modal fade" id="thx-call-3" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<!-- <h4 class="modal-title">Обратная связь</h4> -->
-				</div>
-				<div class="modal-body thx-call">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<h4 class="text-center text-uppercase">ваш вопрос успешно отправлен. спасибо за обращение к специалистам “магазина квартир”!</h4>
-							<h4 class="text-center text-uppercase">мы перезвоним вам в течение 15 минут.</h4>
+						<div class="col-xs-12">
+							<h3 class="text-center">Спасибо!</h3>
+							<p>Мы получили вашу заявку и в ближайшее время с вами свяжется наш специалист</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-12 text-center">
-							<button type="button" class="btn btn-warning design-3 text-uppercase">Закрыть</button>
+							<img src="assets/img/logo.png" alt="">
 						</div>
 					</div>
-				</div>
-				
+				</div>				
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+</div><!-- /.modal -->
