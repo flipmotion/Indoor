@@ -35,9 +35,15 @@ $(document).ready(function () {
     pagination: false,
     // autoplay: true,
     // autoplayTimeout: 3000,
-    dotsContainer: '#dots',
+    dotsContainer: '#menu .nav',
     navContainer: '#navs',
     navText: ["<i class='my-arrow-left'></i>", "<i class='my-arrow-right'></i>"]
+  });
+  var nav = $('#menu');
+  nav.find('li').on('click', function (e) {
+    var dataIndex = $(this).data('item');
+    console.log(dataIndex);
+    $('[data-slider="main"]').trigger('to.owl.carousel', [dataIndex, 300]);
   });
 
   $('[data-select="new"]').select2({

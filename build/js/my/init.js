@@ -37,14 +37,19 @@
  		pagination: false,
  		// autoplay: true,
  		// autoplayTimeout: 3000,
- 		dotsContainer: '#dots',
+ 		dotsContainer: '#menu .nav',
  		navContainer: '#navs',
  		navText: [
  		"<i class='my-arrow-left'></i>",
  		"<i class='my-arrow-right'></i>"
  		]
  	});
- 	
+ 	var nav =  $('#menu');
+ 	nav.find('li').on('click',function(e){
+ 		var dataIndex = $(this).data('item');
+ 		console.log(dataIndex);
+ 		$('[data-slider="main"]').trigger('to.owl.carousel', [dataIndex, 300]);
+ 	});
 
  	$('[data-select="new"]').select2({
  		theme: "bootstrap",
@@ -53,9 +58,9 @@
 
  	$('#call').on('show.bs.modal',function(event){
  		var btn = $(event.relatedTarget),
- 			text = btn.data('whatever'),
- 			modalTitle = $(this).find('.modal-body h3');
- 			modalTitle.text(text);
+ 		text = btn.data('whatever'),
+ 		modalTitle = $(this).find('.modal-body h3');
+ 		modalTitle.text(text);
  	});
  	send();
  	var form = $('[data-form="send"]');
