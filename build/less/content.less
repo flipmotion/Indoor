@@ -292,6 +292,13 @@
 				font-size: 17px;
 				color: #fff;
 				margin: 0;
+				a {
+					color: #fff;
+					.hn-m;
+					position: static;
+					margin:0;
+					opacity: 1;
+				}
 			}
 			.my-hr {
 				margin: 9px 0;
@@ -666,10 +673,14 @@
 		padding: 70px 0 60px;
 		.item {
 			margin-bottom: 40px;
+			display: block;
+			&:hover,&:focus {
+				text-decoration: none;
+			}
 			.descr {
 				text-align: center;
 				background-color: #f41e25;
-				padding: 15px 0;
+				padding: 15px 15px;
 				p {
 					color: #fff;
 					margin: 0;
