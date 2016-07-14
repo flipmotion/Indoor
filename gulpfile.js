@@ -18,10 +18,10 @@ gulp.task('styles', function() {
 	return gulp.src('build/less/style.less')
 	.pipe(less())
 	.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-	/*.pipe(rename({
+	.pipe(rename({
 	  suffix: '.min'
-	}))*/
-	//.pipe(minifycss())
+	}))
+	.pipe(minifycss())
 	.pipe(gulp.dest('assets/css'))
 	.pipe(connect.reload())
 	.pipe(notify({
@@ -59,9 +59,7 @@ gulp.task('html', function () {
 //js
 gulp.task('scripts', function() {
 	return gulp.src('build/js/my/*.js')
-		.pipe(babel({
-			presets: ['es2015']
-		}))
+		.pipe(babel())
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
 		.pipe(concat('app.js'))

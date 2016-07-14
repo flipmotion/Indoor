@@ -175,6 +175,8 @@
 					content:none;
 				}
 				li {
+					margin-bottom: 0;
+					padding-left: 0;
 					a {
 						color: #fff;
 						font-size: 18px;
@@ -193,6 +195,9 @@
 							background-color: #c6181e;
 							border-bottom: 2px solid #fff;
 						}
+					}
+					&:before {
+						content: none;
 					}
 				}
 			}
@@ -386,6 +391,8 @@
 				display: inline-block;
 				padding-right: 20px;
 				position: relative;
+				padding-left: 0;
+				margin-bottom: 0;
 				a {
 					.an;
 					font-size: 15px;
@@ -401,6 +408,9 @@
 					right: 6px;
 				}
 				&:last-child:after {
+					content: none;
+				}
+				&:before {
 					content: none;
 				} 
 			}
