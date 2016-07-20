@@ -35,6 +35,7 @@
  		loop:true,
  		nav:true,
  		pagination: false,
+ 		autoHeight:true,
  		// autoplay: true,
  		// autoplayTimeout: 3000,
  		dotsContainer: '#menu .nav',
@@ -45,6 +46,9 @@
  		]
  	});
  	var nav =  $('#menu');
+ 	nav.find('a').on('click',function(e){
+ 		e.preventDefault();
+ 	});
  	nav.find('li').on('click',function(e){
  		var dataIndex = $(this).data('item');
  		console.log(dataIndex);

@@ -15,8 +15,17 @@
 }
 /*reset displat tabs END*/
 /*select*/
-
+.select2-container {
+	.select2-results__options {
+		li {
+			&:before {
+				content: none;
+			}
+		}
+	}
+}
 .select2-container--bootstrap {
+	
 	.select2-selection {
 		border-radius: 0;
 		box-shadow: none !important;
